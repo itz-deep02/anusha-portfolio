@@ -3,7 +3,6 @@ import { Marquee } from "./ui/magicui/Marique";
 import Image from "next/image";
 import { Card } from "./ui/Card";
 import { Button } from "./ui/Button";
-import { ShinyButton } from "./ui/magicui/ShinnyButton";
 
 const leftMarqueePosts = [
   {

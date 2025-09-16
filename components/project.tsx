@@ -77,7 +77,6 @@ import clsx from "clsx";
 import { ArrowRightIcon } from "lucide-react";
 import { Card } from "./ui/Card";
 import { Button } from "./ui/Button";
-import ScrollStack, { ScrollStackItem } from "./ui/reactbits/ScrollStack";
 import { ContainerScroll } from "./ui/aceternity/ContainerScrollAnimation";
 
 type Stat = { icon?: React.ReactNode; text: string };
