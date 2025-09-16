@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* sensible fallbacks */
+  --duration: 40s;
+  --gap: 1rem;
 }
 
 @theme inline {
@@ -23,4 +26,34 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Keyframes */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--gap))); }
+}
+@keyframes marquee-vertical {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-100% - var(--gap))); }
+}
+
+/* Base animation utilities */
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+  will-change: transform;
+}
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+  will-change: transform;
+}
+
+/* Direction helpers (simpler than separate reverse keyframes) */
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+/* Pause helper for group-hover:pause */
+.pause {
+  animation-play-state: paused !important;
 }

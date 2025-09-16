@@ -1,103 +1,207 @@
+"use client";
+
+import { useState } from "react";
+// If you're on Framer Motion v10 or earlier, import from "framer-motion" instead.
+import { motion, useScroll, useSpring } from "motion/react";
+
+import WelcomeScreen from "@/components/welcome-screen";
 import Image from "next/image";
+import SplitText from "@/components/ui/reactbits/SplitText";
+import TextType from "@/components/ui/reactbits/TextType";
+import Navigation from "@/components/navbar";
+import { ExperienceSection } from "@/components/experience";
+import { MovingTags } from "@/components/moving-tags";
+import { ToolsSkills } from "@/components/tools-skills";
+import { InstagramPortfolio } from "@/components/instagram-portfolio";
+import { SmoothCursor } from "@/components/ui/magicui/SmoothCursor";
+import Testimonials from "@/components/testimonial";
+import FAQ from "@/components/faq";
+import { FloatingDock } from "@/components/ui/aceternity/FloatingDock";
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+} from "@tabler/icons-react";
+import { ProjectsSection } from "@/components/project";
+const links = [
+  {
+    title: "Home",
+    icon: (
+      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+
+  {
+    title: "Products",
+    icon: (
+      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  {
+    title: "Components",
+    icon: (
+      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  // {
+  //   title: "Aceternity UI",
+  //   icon: (
+  //     <Image
+  //       src="https://assets.aceternity.com/logo-dark.png"
+  //       width={20}
+  //       height={20}
+  //       alt="Aceternity Logo"
+  //     />
+  //   ),
+  //   href: "#",
+  // },
+  {
+    title: "Changelog",
+    icon: (
+      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+
+  {
+    title: "Twitter",
+    icon: (
+      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+  {
+    title: "GitHub",
+    icon: (
+      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#",
+  },
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { scrollYProgress } = useScroll();
+  // Smooth the progress a bit (optional but nice)
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const [showWelcome, setShowWelcome] = useState(true);
+  const handleWelcomeComplete = () => setShowWelcome(false);
+
+  if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
+
+  return (
+    <>
+      {/* TOP SCROLL PROGRESS BAR */}
+      <motion.div
+        className="fixed left-0 right-0 top-0 h-1 bg-green-400 origin-left z-[9999]"
+        style={{ scaleX }}
+      />
+      {/* <SmoothCursor /> */}
+
+      <main className="w-full">
+        <Navigation />
+
+        {/* HERO: background limited to first viewport */}
+        <section className="relative h-[100svh] w-full overflow-hidden">
+          <Image
+            src="/images/Homepage.png"
+            alt="Homepage background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover -z-10 pointer-events-none"
+          />
+
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
+            <SplitText
+              text="I Design digital experiences that people trust, love, and return to."
+              className="text-4xl font-bold mb-4 text-[#0C0C49]"
+              delay={50}
+              duration={3}
+              ease="elastic.out(1, 0.7)"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+
+            <TextType
+              text={[
+                "Product Designer at Games24x7",
+                "Crafting delightful user experiences",
+                "Designing games millions love to play",
+              ]}
+              typingSpeed={75}
+              pauseDuration={1000}
+              showCursor={true}
+              cursorCharacter="|"
+              className="text-2xl text-[#0C0C49]"
+              textColors={["text-[#0C0C49]"]}
+            />
+          </div>
+        </section>
+
+        {/* CONTENT BELOW HERO */}
+        <section className="relative">
+          <ExperienceSection />
+        </section>
+
+        <section className="relative">
+          <MovingTags />
+        </section>
+
+        <section className="relative">
+          <ProjectsSection />
+        </section>
+
+        <section className="relative">
+          <ToolsSkills />
+        </section>
+
+        <section className="relative">
+          <InstagramPortfolio />
+        </section>
+
+        <section
+          style={{
+            backgroundImage: "url('/images/testimonial.png')",
+          }}
+        >
+          <Testimonials />
+          <FAQ />
+        </section>
+
+        <section className="relative">
+          <Image
+            src="/images/footer.png"
+            alt="footer"
+            width={2400} // <-- use your image’s actual pixel width
+            height={800} // <-- use your image’s actual pixel height
+            sizes="100vw"
+            priority
+            style={{ width: "100%", height: "auto" }}
+            className="pointer-events-none"
+          />
+          <div className=" absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
+            <FloatingDock
+              mobileClassName="translate-y-20" // only for demo, remove for production
+              items={links}
+            />
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
