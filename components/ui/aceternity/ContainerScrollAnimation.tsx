@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
-import { useScroll, useTransform, motion, MotionValue } from 'motion/react';
-import clsx from 'clsx';
+import React, { useRef } from "react";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import clsx from "clsx";
 
 type ContainerScrollProps = {
   titleComponent: React.ReactNode;
@@ -19,8 +19,8 @@ export const ContainerScroll = ({
   titleComponent,
   children,
   frame = false,
-  heightClassName = 'h-[120rem] md:h-[160rem]',
-  contentClassName = '',
+  heightClassName = "h-[120rem] md:h-[160rem]",
+  contentClassName = "",
 }: ContainerScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
@@ -34,13 +34,18 @@ export const ContainerScroll = ({
     <div
       ref={containerRef}
       className={clsx(
-        'relative flex items-center justify-center p-2 md:p-20',
+        "relative flex items-center justify-center p-2 md:p-20",
         heightClassName
       )}
     >
-      <div className="w-full relative" style={{ perspective: '1000px' }}>
+      <div className="w-full relative" style={{ perspective: "1000px" }}>
         <Header translate={translateTitle}>{titleComponent}</Header>
-        <Card rotate={rotate} scale={scale} frame={frame} contentClassName={contentClassName}>
+        <Card
+          rotate={rotate}
+          scale={scale}
+          frame={frame}
+          contentClassName={contentClassName}
+        >
           {children}
         </Card>
       </div>
@@ -55,7 +60,10 @@ const Header = ({
   translate: MotionValue<number>;
   children: React.ReactNode;
 }) => (
-  <motion.div style={{ translateY: translate }} className="max-w-7xl mx-auto text-center">
+  <motion.div
+    style={{ translateY: translate }}
+    className="max-w-7xl mx-auto text-center"
+  >
     {children}
   </motion.div>
 );
@@ -79,21 +87,21 @@ const Card = ({
         rotateX: rotate,
         scale,
         boxShadow:
-          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
-        willChange: 'transform',
+          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+        willChange: "transform",
       }}
       className={clsx(
-        'mx-auto w-full max-w-7xl -mt-12 rounded-[30px]',
+        "mx-auto w-full max-w-7xl -mt-12 rounded-[30px]",
         // when frame=false we remove the dark backdrop + border + fixed heights
         frame
-          ? 'h-[30rem] md:h-[40rem] border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222]'
-          : 'bg-transparent p-0'
+          ? "h-[30rem] md:h-[40rem] border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222]"
+          : "bg-transparent p-0"
       )}
     >
       <div
         className={clsx(
           // IMPORTANT: visible + auto height so your cards aren’t clipped
-          'w-full h-auto overflow-visible rounded-[24px] md:rounded-[24px] bg-transparent',
+          "w-full h-auto overflow-visible rounded-[24px] md:rounded-[24px] bg-transparent",
           contentClassName
         )}
       >

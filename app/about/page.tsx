@@ -1,7 +1,7 @@
 "use client";
 
 import Navigation from "@/components/navbar";
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 
 const images = [

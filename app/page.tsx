@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 // If you're on Framer Motion v10 or earlier, import from "framer-motion" instead.
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 import WelcomeScreen from "@/components/welcome-screen";
 import Image from "next/image";
