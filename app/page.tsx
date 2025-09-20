@@ -1,31 +1,36 @@
 "use client";
 
 import { useState } from "react";
-// If you're on Framer Motion v10 or earlier, import from "framer-motion" instead.
 import { motion, useScroll, useSpring } from "framer-motion";
 
-import WelcomeScreen from "@/components/welcome-screen";
-import Image from "next/image";
-import SplitText from "@/components/ui/reactbits/SplitText";
-import TextType from "@/components/ui/reactbits/TextType";
-import Navigation from "@/components/navbar";
-import { ExperienceSection } from "@/components/experience";
-import { MovingTags } from "@/components/moving-tags";
-import { ToolsSkills } from "@/components/tools-skills";
-import { InstagramPortfolio } from "@/components/instagram-portfolio";
-import { SmoothCursor } from "@/components/ui/magicui/SmoothCursor";
-import Testimonials from "@/components/testimonial";
-import FAQ from "@/components/faq";
-import { FloatingDock } from "@/components/ui/aceternity/FloatingDock";
 import {
-  IconBrandGithub,
-  IconBrandX,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBubbleText,
   IconExchange,
   IconHome,
   IconNewSection,
+  IconPhone,
   IconTerminal2,
 } from "@tabler/icons-react";
-import { ProjectsSection } from "@/components/project";
+import WelcomeScreen from "components/welcome-screen";
+import Navigation from "components/navbar";
+import Image from "next/image";
+import SplitText from "components/ui/reactbits/SplitText";
+import TextType from "components/ui/reactbits/TextType";
+import { ExperienceSection } from "components/experience";
+import { MovingTags } from "components/moving-tags";
+import { ProjectsSection } from "components/project";
+import { ToolsSkills } from "components/tools-skills";
+import { InstagramPortfolio } from "components/instagram-portfolio";
+import Testimonials from "components/testimonial";
+import FAQ from "components/faq";
+import { FloatingDock } from "components/ui/aceternity/FloatingDock";
+import { SmoothCursor } from "components/ui/magicui/SmoothCursor";
+import { Youtube } from "components/youtube";
+import { CharacterShowcase } from "components/character-showcase";
+import { BehanceProject, ProjectCard } from "components/behance-project-card";
+import { FeaturedProjects } from "components/new-project";
 const links = [
   {
     title: "Home",
@@ -43,11 +48,11 @@ const links = [
     href: "#",
   },
   {
-    title: "Components",
+    title: "FAQ",
     icon: (
-      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconBubbleText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/#faq",
   },
   // {
   //   title: "Aceternity UI",
@@ -62,26 +67,26 @@ const links = [
   //   href: "#",
   // },
   {
-    title: "Changelog",
+    title: "Contact",
     icon: (
-      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/contact",
   },
 
   {
-    title: "Twitter",
+    title: "Instagram",
     icon: (
-      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "https://www.instagram.com/mylittlebubbble/",
   },
   {
-    title: "GitHub",
+    title: "LinkedIn",
     icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "https://www.linkedin.com/in/anusha-agrawal-951a0717b/",
   },
 ];
 
@@ -97,18 +102,18 @@ export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
   const handleWelcomeComplete = () => setShowWelcome(false);
 
-  if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
+  // if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
 
   return (
     <>
       {/* TOP SCROLL PROGRESS BAR */}
       <motion.div
-        className="fixed left-0 right-0 top-0 h-1 bg-green-400 origin-left z-[9999]"
+        className="fixed left-0 right-0 top-0 h-1 bg-gradient-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92] origin-left z-[9999]"
         style={{ scaleX }}
       />
       {/* <SmoothCursor /> */}
 
-      <main className="w-full">
+      <main className="w-full bg-white">
         <Navigation />
 
         {/* HERO: background limited to first viewport */}
@@ -119,7 +124,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover -z-10 pointer-events-none"
+            className="object-cover z-0 pointer-events-none"
           />
 
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
@@ -154,24 +159,34 @@ export default function Home() {
         </section>
 
         {/* CONTENT BELOW HERO */}
-        <section className="relative">
+        <section className="relative py-8">
           <ExperienceSection />
         </section>
 
-        <section className="relative">
+        <section className="relative py-8">
           <MovingTags />
         </section>
 
-        <section className="relative">
+        {/* <section className="relative py-8">
           <ProjectsSection />
-        </section>
+        </section> */}
 
         <section className="relative">
+          <FeaturedProjects />
+        </section>
+
+        <BehanceProject />
+
+        <section className="relative py-8">
           <ToolsSkills />
         </section>
 
-        <section className="relative">
+        <section className="relative py-20">
           <InstagramPortfolio />
+        </section>
+
+        <section className="relative py-20">
+          <Youtube />
         </section>
 
         <section
@@ -181,6 +196,10 @@ export default function Home() {
         >
           <Testimonials />
           <FAQ />
+        </section>
+
+        <section>
+          <CharacterShowcase />
         </section>
 
         <section className="relative">

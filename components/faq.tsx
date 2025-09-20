@@ -3,19 +3,18 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/Accordion";
+} from "../src/components/ui/Accordion";
 
 const faqs = [
   {
     question: "What is your design process?",
     answer:
-      "My design process involves understanding user needs, creating wireframes, prototyping, testing, and iterating based on feedback to deliver user-centered solutions.",
+      "I start with understanding the problem, gather user and business insights, brainstorm ideas, create prototypes, test with users, and refine until the solution feels both impactful and intuitive.",
   },
   {
-    question:
-      "How do you balance business goals with user needs in your designs?",
+    question: "How do you handle feedback on your designs?",
     answer:
-      "I balance business goals with user needs by conducting thorough research, creating user personas, and ensuring that business objectives align with user experience through data-driven design decisions.",
+      "I balance business goals with user needs by aligning both early on, mapping objectives against user insights, and designing solutions that drive impact without breaking trust.",
   },
   {
     question: "How do you handle feedback on your designs?",
@@ -31,6 +30,7 @@ export default function FAQ() {
       style={{
         backgroundImage: "url('/testimonial.png')",
       }}
+      id="FAQ"
     >
       <div className="container mx-auto px-6 max-w-4xl">
         <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">

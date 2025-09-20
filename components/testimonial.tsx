@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Marquee } from "./ui/magicui/Marique";
-import { Card } from "./ui/Card";
+import { Card } from "../src/components/ui/Card";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -11,6 +11,7 @@ const testimonials = [
     content:
       "I worked with Games 24*7 Anusha attitude towards work is great and she has proven to be a great team player with good work.",
     rating: 5,
+    accentColor: "#8B5CF6",
   },
   {
     name: "Anusha",
@@ -20,6 +21,7 @@ const testimonials = [
     content:
       "Anusha possesses a unique talent for creating intuitive and visually appealing designs. Having collaborated closely with her, I can attest to her ability to craft user-centric solutions that exceed expectations. Anusha is a versatile and skilled designer who can elevate both the user experience and visual appeal of any project.",
     rating: 5,
+    accentColor: "#3B82F6",
   },
   {
     name: "Ananya Agrawal",
@@ -29,6 +31,7 @@ const testimonials = [
     content:
       "I am happy to work with Anusha. She is a very patient designer, who takes a lot of time to understand the requirements and is a very dedicated professional who has a 'never stop learning and exploring' mindset. I am sure she'll not miss an opportunity to amaze whoever works with her next. All the very best for your future endeavours Anusha!",
     rating: 5,
+    accentColor: "#10B981",
   },
   {
     name: "Devendra Singh Rana",
@@ -38,6 +41,7 @@ const testimonials = [
     content:
       "In short period of time at Games 24*7 Anusha has shown a positive attitude towards work, great zeal for learning and proven to be a great team player with good work.",
     rating: 5,
+    accentColor: "#8B5CF6",
   },
   {
     name: "Anusha",
@@ -47,6 +51,7 @@ const testimonials = [
     content:
       "Anusha possesses a unique talent for creating intuitive and visually appealing designs. Having collaborated closely with her, I can attest to her ability to craft user-centric solutions that exceed expectations.",
     rating: 5,
+    accentColor: "#3B82F6",
   },
 ];
 
@@ -59,8 +64,8 @@ export default function Testimonials() {
       }}
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">
-          Testimonials
+        <h2 className="text-4xl font-bold text-center text-slate-900 mb-16 font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold']">
+          Here’s some gossip about me
         </h2>
 
         <div className="relative overflow-hidden">
@@ -72,15 +77,16 @@ export default function Testimonials() {
               >
                 <div className="p-6 h-full flex flex-col">
                   {/* Quote icon */}
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-blue-600 text-lg font-bold">
-                      &quot;
-                    </span>
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center mb-6"
+                    style={{ backgroundColor: testimonial.accentColor }}
+                  >
+                    <Quote className="w-4 h-4 text-white" />
                   </div>
 
                   {/* Testimonial content */}
                   <div className="flex-1">
-                    <p className="text-slate-700 text-sm leading-relaxed mb-6 line-clamp-6 overflow-hidden">
+                    <p className="text-slate-700 text-sm font-['Geist'] leading-relaxed mb-6 line-clamp-6 overflow-hidden">
                       {testimonial.content}
                     </p>
                   </div>

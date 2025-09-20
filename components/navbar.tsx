@@ -2,12 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Button } from "./ui/Button";
-import {
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconDownload,
-} from "@tabler/icons-react";
+import { Button } from "../src/components/ui/Button";
+import { IconDownload } from "@tabler/icons-react";
 import Link from "next/link";
 
 export default function Navigation() {
@@ -45,7 +41,7 @@ export default function Navigation() {
 
           {/* Navigation Links */}
           <div
-            className={`hidden md:flex items-center transition-all duration-300 ${
+            className={`hidden md:flex items-center transition-all duration-300 font-medium ${
               isScrolled ? "space-x-6" : "space-x-8"
             }`}
           >
@@ -79,13 +75,13 @@ export default function Navigation() {
             </div>
             <div className="group relative overflow-hidden">
               <Link
-                href="#work"
+                href="/#work"
                 className="block text-gray-700 font-medium translate-y-0 skew-y-0 transform-gpu transition-transform duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12"
               >
                 Work
               </Link>
               <Link
-                href="#work"
+                href="/#work"
                 className="absolute top-0 left-0 text-gray-900 font-medium translate-y-[110%] skew-y-12 transform-gpu transition-transform duration-500 group-hover:translate-y-0 group-hover:skew-y-0"
               >
                 Work
@@ -93,13 +89,27 @@ export default function Navigation() {
             </div>
             <div className="group relative overflow-hidden">
               <Link
-                href="#contact"
+                href="/#FAQ"
+                className="block text-gray-700 font-medium translate-y-0 skew-y-0 transform-gpu transition-transform duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/#FAQ"
+                className="absolute top-0 left-0 text-gray-900 font-medium translate-y-[110%] skew-y-12 transform-gpu transition-transform duration-500 group-hover:translate-y-0 group-hover:skew-y-0"
+              >
+                FAQ
+              </Link>
+            </div>
+            <div className="group relative overflow-hidden">
+              <Link
+                href="/contact"
                 className="block text-gray-700 font-medium translate-y-0 skew-y-0 transform-gpu transition-transform duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12"
               >
                 Contact
               </Link>
               <Link
-                href="#contact"
+                href="/contact"
                 className="absolute top-0 left-0 text-gray-900 font-medium translate-y-[110%] skew-y-12 transform-gpu transition-transform duration-500 group-hover:translate-y-0 group-hover:skew-y-0"
               >
                 Contact
@@ -114,20 +124,28 @@ export default function Navigation() {
             }`}
           >
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/anusha-agrawal-951a0717b/"
               target="_blank"
               rel="noopener noreferrer"
-              className={` bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors`}
             >
-              <IconBrandLinkedin className="w-8 h-8" />
+              <Image
+                src="/icons/ic_linkedin.svg"
+                alt="icon"
+                width={24}
+                height={24}
+              />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/mylittlebubbble/"
               target="_blank"
               rel="noopener noreferrer"
-              className={` bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors`}
             >
-              <IconBrandInstagram className="w-8 h-8" />
+              <Image
+                src="/icons/ic_instagram.svg"
+                alt="icon"
+                width={24}
+                height={24}
+              />
             </Link>
 
             <Button
@@ -135,10 +153,10 @@ export default function Navigation() {
               size={isScrolled ? "sm" : "default"}
               className="bg-white/80 border-gray-300 text-gray-700 hover:bg-white hover:text-gray-900 transition-all duration-300"
             >
+              <span className={isScrolled ? "text-sm" : ""}>Resume</span>
               <IconDownload
                 className={`mr-2 ${isScrolled ? "w-3 h-3" : "w-4 h-4"}`}
               />
-              <span className={isScrolled ? "text-sm" : ""}>Resume</span>
             </Button>
           </div>
         </div>

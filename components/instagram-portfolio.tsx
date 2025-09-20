@@ -1,8 +1,8 @@
 import { Instagram, Flame } from "lucide-react";
 import { Marquee } from "./ui/magicui/Marique";
 import Image from "next/image";
-import { Card } from "./ui/Card";
-import { Button } from "./ui/Button";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 
 const leftMarqueePosts = [
   {
@@ -43,12 +43,12 @@ const rightMarqueePosts = [
 export function InstagramPortfolio() {
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative py-20"
+      className="min-h-[1080px] bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundImage: "url('/images/instagram-section.png')",
       }}
     >
-      <div className="container mx-auto px-6 py-12 grid lg:grid-cols-2 gap-8 items-center min-h-screen">
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
         {/* Left Side - Portfolio Content */}
         <div className="space-y-8 max-w-lg">
           <div className="space-y-6">
@@ -92,7 +92,7 @@ export function InstagramPortfolio() {
         </div>
 
         {/* Right Side - Marquee Posts */}
-        <div className="relative h-[800px] overflow-hidden">
+        <div className="relative h-[1080px] overflow-hidden">
           <div className="flex gap-4 h-full">
             {/* Left Marquee - Moving Up */}
             <div className="flex-1">

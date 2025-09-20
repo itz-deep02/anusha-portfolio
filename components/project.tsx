@@ -41,7 +41,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="relative">
+    <>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-white/0 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export function ProjectsSection() {
           ))}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
@@ -75,8 +75,8 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import { ArrowRightIcon } from "lucide-react";
-import { Card } from "./ui/Card";
-import { Button } from "./ui/Button";
+import { Card } from "../src/components/ui/Card";
+import { Button } from "../src/components/ui/Button";
 import { ContainerScroll } from "./ui/aceternity/ContainerScrollAnimation";
 
 type Stat = { icon?: React.ReactNode; text: string };
