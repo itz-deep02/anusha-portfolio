@@ -49,7 +49,7 @@ export default function Home() {
         {/* HERO: background limited to first viewport */}
         <section className="relative h-[100svh] w-full overflow-hidden">
           <Image
-            src="/images/homepage-bg.png"
+            src="/images/homepage.png"
             alt="Homepage bg"
             fill
             priority
