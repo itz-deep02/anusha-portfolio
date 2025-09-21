@@ -1,7 +1,6 @@
 import { ArrowRight, Instagram, InstagramIcon } from "lucide-react";
 import { Marquee } from "./ui/magicui/Marique";
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 import { Youtube } from "./youtube";
 import Link from "next/link";
 
