@@ -11,7 +11,7 @@ export function BehanceProject() {
           <ProjectCard
             title="Travellogo Travel Portal"
             tags={["Travel Portal Concept", "Website Design"]}
-            mockupImage="/images/travellogo-mockup.png"
+            mockupImage="/images/behance-project-2.png"
             backgroundType="purple"
             href="https://www.behance.net/gallery/155999101/Travellogo-Website-Design"
           />
@@ -20,7 +20,7 @@ export function BehanceProject() {
           <ProjectCard
             title="Ovi Mobile App"
             tags={["UI UX App", "Design Concept"]}
-            mockupImage="/images/ovi-mockup.png"
+            mockupImage="/images/behance-project-1.png"
             backgroundType="beige"
             href="https://www.behance.net/gallery/124598595/Ovi-Mobile-App-Design-Concept"
           />
@@ -29,7 +29,7 @@ export function BehanceProject() {
           <ProjectCard
             title="Payflow- Money Transfer"
             tags={["Fintech App", "Fund Transferring App"]}
-            mockupImage="/images/payflow-mockup.png"
+            mockupImage="/images/behance-project-3.png"
             backgroundType="purple"
             href="https://www.behance.net/gallery/177690757/Payflow-Money-Transferring-App-Design"
           />
@@ -66,7 +66,7 @@ export function ProjectCard({
 
   return (
     <div
-      className={`relative rounded-3xl p-8 flex flex-col min-h-[520px] ${className}`}
+      className={`relative rounded-3xl p-8 flex flex-col ${className}`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -75,12 +75,12 @@ export function ProjectCard({
       }}
     >
       {/* Mockup Image Container */}
-      <div className="flex-1 mb-4 relative min-h-0">
-        <div className="w-full h-full bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+      <div className="mb-4 relative min-h-0">
+        <div className="w-full h-fit bg-white rounded-3xl shadow-lg overflow-hidden">
           <img
-            src={mockupImage || "/placeholder.svg"}
+            src={mockupImage}
             alt={title}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-3xl"
           />
         </div>
       </div>

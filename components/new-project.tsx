@@ -278,9 +278,8 @@ const projects = [
     title: "Reducing Support Load & Improving Transparency",
     description:
       "How we redesigned the Help & Support section by allowing users to easily view and track their support tickets within the app.",
-    image: {
-      src: "/mobile-app-support-interface-mockup-with-help-tick.jpg",
-      alt: "Support app interface mockup",
+    video: {
+      src: "/videos/project-1.mp4",
     },
     stats: [
       { value: "7%", label: "ARPU Uplift" },
@@ -300,9 +299,8 @@ const projects = [
     title: "Building Players Trust Through Redesigning Profile Experience",
     description:
       "Focused on reducing fraudulent behavior and complaints while boosting player authenticity and trust-driven engagement.",
-    image: {
-      src: "/rummy-circle-mobile-app-profile-interface-with-mul.jpg",
-      alt: "RummyCircle app profile interface",
+    video: {
+      src: "/videos/project-2.mp4",
     },
     stats: [
       { value: "9%", label: "ARPU Uplift" },
@@ -319,7 +317,7 @@ const projects = [
     description:
       "Designing a Seamless KYC Journey for My11Circle: Reducing User Frustration, Increasing Completion Rates.",
     image: {
-      src: "/my11circle-mobile-app-kyc-verification-interface.jpg",
+      src: "/images/project-3.png",
       alt: "My11Circle KYC verification interface",
     },
     stats: [
@@ -337,7 +335,7 @@ const projects = [
     description:
       "A feature introduced in Rummy Circle, adds a dynamic twist to the classic Deals Rummy by integrating whitegoods as prizes",
     image: {
-      src: "/turbo-rummy-mobile-game-interface-with-cards-and-p.jpg",
+      src: "/images/project-4.png",
       alt: "Turbo Rummy game interface",
     },
     stats: [
@@ -405,6 +403,7 @@ function ProjectCard({
   title,
   description,
   image,
+  video,
   stats,
   cta,
   tags,
@@ -434,11 +433,22 @@ function ProjectCard({
             isImageLeft ? "lg:order-1" : ""
           }`}
         >
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="rounded-2xl shadow-2xl max-w-sm"
-          />
+          {video ? (
+            <video
+              src={video.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="rounded-2xl shadow-2xl max-w-sm"
+            />
+          ) : (
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="rounded-2xl shadow-2xl max-w-sm"
+            />
+          )}
         </div>
 
         {/* text column */}
@@ -450,7 +460,7 @@ function ProjectCard({
             {description}
           </p>
 
-          <div className="flex gap-8 mb-8">
+          <div className="flex gap-8 mb-8 bg-white/20 p-4 rounded-lg shadow-[0px_4.336996555328369px_4.336996555328369px_0px_rgba(0,0,0,0.25)] w-fit">
             {stats.map((s) => (
               <div key={s.label}>
                 <div className="text-3xl font-bold">{s.value}</div>

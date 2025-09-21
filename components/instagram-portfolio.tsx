@@ -58,10 +58,12 @@ const leftMarqueePosts = [
 export function InstagramPortfolio() {
   return (
     <div
-      className="relative bg-cover bg-center bg-no-repeat"
+      className="relative bg-no-repeat bg-top py-4"
       style={{
-        backgroundImage: "url('/images/instagram-section.png')",
+        backgroundImage: "url('/images/beyond-portfolio.png')",
+        backgroundSize: "100% auto",
       }}
+      id="instagram"
     >
       <div className="container mx-auto px-6 grid gap-8 place-items-center min-h-[calc(100svh)] py-8">
         {/* Left Side - Portfolio Content */}

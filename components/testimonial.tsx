@@ -1,57 +1,61 @@
 import { Marquee } from "./ui/magicui/Marique";
 import { Card } from "../src/components/ui/Card";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Sahil Rana",
-    role: "Graphic Designer, Games 24*7",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
-    content:
-      "I worked with Games 24*7 Anusha attitude towards work is great and she has proven to be a great team player with good work.",
-    rating: 5,
-    accentColor: "#8B5CF6",
-  },
-  {
-    name: "Anusha",
-    role: "UX Designer, TCS",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face",
-    content:
-      "Anusha possesses a unique talent for creating intuitive and visually appealing designs. Having collaborated closely with her, I can attest to her ability to craft user-centric solutions that exceed expectations. Anusha is a versatile and skilled designer who can elevate both the user experience and visual appeal of any project.",
-    rating: 5,
-    accentColor: "#3B82F6",
-  },
-  {
     name: "Ananya Agrawal",
     role: "Reputation Manager, The Mavericks",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",
-    content:
-      "I am happy to work with Anusha. She is a very patient designer, who takes a lot of time to understand the requirements and is a very dedicated professional who has a 'never stop learning and exploring' mindset. I am sure she'll not miss an opportunity to amaze whoever works with her next. All the very best for your future endeavours Anusha!",
+    avatar: "/images/linkedin-1.png",
+    content: `I am happy to work with Anusha. She is a very patient designer, who takes all the feedback and suggestions with a good spirit. A sincere and dedicated professional who has a "never stop learning and exploring" mindset. I am sure she'll not miss an opportunity to amaze whoever works with her next. All the very best for your future endeavors Anusha!`,
     rating: 5,
-    accentColor: "#10B981",
+    accentColor: "#34D399",
   },
   {
     name: "Devendra Singh Rana",
-    role: "Sr. Product Designer, Games 24*7",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
+    role: "Lead Product Designer, Games 24x7",
+    avatar: "/images/linkedin-2.png",
     content:
-      "In short period of time at Games 24*7 Anusha has shown a positive attitude towards work, great zeal for learning and proven to be a great team player with good work.",
+      "In short period of time at Games 24x7, Anusha has shown a positive attitude towards work, great zeal for learning and proven to be a great team player. Kudos to all the good work.",
     rating: 5,
-    accentColor: "#8B5CF6",
+    accentColor: "#F472B6",
   },
   {
-    name: "Anusha",
-    role: "UX Designer",
-    avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face",
+    name: "Aman K Tripathi",
+    role: "Sr. Product Designer, Games 24x7",
+    avatar: "/images/linkedin-3.png",
     content:
-      "Anusha possesses a unique talent for creating intuitive and visually appealing designs. Having collaborated closely with her, I can attest to her ability to craft user-centric solutions that exceed expectations.",
+      "Had the pleasure of working with Anusha, and she truly stands out for her creativity and positive attitude. She approaches challenges with fresh ideas and innovative thinking, often finding solutions that add real value to the team. Beyond her skills, she is collaborative, supportive, and always brings great energy to the workplace. With her talent and mindset, I’m confident she has great potential to grow and excel in any role she takes on.",
     rating: 5,
-    accentColor: "#3B82F6",
+    accentColor: "#FFBB74",
+  },
+  {
+    name: "Vikesh Nagar",
+    role: "Co-founder, Eventoo",
+    avatar: "/images/linkedin-4.png",
+    content:
+      "Anusha helped us with the design work for Eventoo and did a great job. She quickly understood what we were looking for and translated our ideas into clean and easy to use designs. Working with her was smooth and she was always open to feedback and quick with iterations. Really happy with the outcome and would definitely recommend her for any UI/UX work.",
+    rating: 5,
+    accentColor: "#60A5FA",
+  },
+  {
+    name: "Sagar Pednekar",
+    role: "Lead UX Designer, Games 24x7",
+    avatar: "/images/linkedin-5.png",
+    content:
+      "Anusha is always a calm and composed colleague to work with. She is creative, detail-oriented, and consistently delivers thoughtful design solutions. I had the chance to work with her on a few projects, and she always took feedback positively and acted on it. She’s also very collaborative and brings a positive energy that makes teamwork easy and enjoyable. I highly recommend her.",
+    rating: 5,
+    accentColor: "#D1AEFF",
+  },
+  {
+    name: "Saloni Pal",
+    role: "UX Designer, TCS",
+    avatar: "/images/linkedin-6.png",
+    content:
+      "Anusha possesses a unique talent for creating intuitive and visually appealing user experiences. Having collaborated closely with her, I can attest to her ability to craft user-centric solutions that exceed expectations. Anusha is a true team player, open to feedback, and always willing to collaborate with others to achieve the best outcomes. I highly recommend her to anyone seeking a versatile and skilled designer who can elevate both the user experience and visual appeal of their projects.",
+    rating: 5,
+    accentColor: "#9BDBFF",
   },
 ];
 
@@ -73,7 +77,7 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="w-80 h-[360px] mx-4 bg-white/90 backdrop-blur-sm border-0 shadow-lg"
+                className="w-80 h-[360px] mx-4 bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:bg-white/80"
               >
                 <div className="p-6 h-full flex flex-col">
                   {/* Quote icon */}
@@ -93,13 +97,13 @@ export default function Testimonials() {
 
                   {/* Author info */}
                   <div className="mt-auto flex items-center gap-3">
-                    {/* <Image
-          src={testimonial.avatar || "/placeholder.svg"}
-          alt={testimonial.name}
-          className="w-10 h-10 rounded-full object-cover"
-          width={40}
-          height={40}
-        /> */}
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full object-cover"
+                      width={40}
+                      height={40}
+                    />
                     <div>
                       <div className="font-semibold text-slate-900 text-sm">
                         {testimonial.name}
