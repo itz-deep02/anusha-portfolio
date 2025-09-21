@@ -62,3 +62,7 @@ html, body {
 .pause {
   animation-play-state: paused !important;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

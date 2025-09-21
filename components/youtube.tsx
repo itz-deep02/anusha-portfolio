@@ -47,7 +47,7 @@ const videos = [
 
 export function Youtube() {
   return (
-    <div className="px-4">
+    <div className="">
       <div className="flex justify-end py-4">
         <div className="flex items-center gap-2 p-4 text-sm text-gray-600 bg-[rgba(231,236,235,0.08)] shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
           <div className="flex items-center gap-1">
@@ -59,7 +59,7 @@ export function Youtube() {
             />
             <Link
               href="https://www.youtube.com/@mylittlebubbble"
-              className="text-blue-600 hover:underline cursor-pointer"
+              className="text-blue-600 hover:underline cursor-pointer font-semibold"
             >
               Visit YouTube
             </Link>
@@ -120,7 +120,7 @@ export function HeroVideoDialog({
       <DialogTrigger asChild>
         <div
           className={cn(
-            "group relative cursor-pointer overflow-hidden  bg-white transition-all duration-300",
+            "group relative cursor-pointer overflow-hidden transition-all duration-300",
             className
           )}
         >

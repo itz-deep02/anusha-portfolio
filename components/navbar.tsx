@@ -153,10 +153,16 @@ export default function Navigation() {
               size={isScrolled ? "sm" : "default"}
               className="bg-white/80 border-gray-300 text-gray-700 hover:bg-white hover:text-gray-900 transition-all duration-300"
             >
-              <span className={isScrolled ? "text-sm" : ""}>Resume</span>
-              <IconDownload
-                className={`mr-2 ${isScrolled ? "w-3 h-3" : "w-4 h-4"}`}
-              />
+              <a
+                href="/Anusha_CV_2025.pdf"
+                download
+                className="flex gap-2 items-center"
+              >
+                <span className={isScrolled ? "text-sm" : ""}>Resume</span>
+                <IconDownload
+                  className={`mr-2 ${isScrolled ? "w-3 h-3" : "w-4 h-4"}`}
+                />
+              </a>
             </Button>
           </div>
         </div>

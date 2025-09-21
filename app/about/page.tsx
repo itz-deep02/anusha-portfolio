@@ -86,30 +86,60 @@ export default function AboutPage() {
         <Navigation />
 
         {/* Hero */}
-        <section className="relative h-[100svh] w-full overflow-hidden">
+        <section className="relative h-[80svh] w-full overflow-hidden">
           <Image
-            src="/images/Homepage.png"
-            alt="Homepage background"
+            src="/images/about-bg.png"
+            alt="bg"
             fill
             priority
-            sizes="100vw"
+            sizes="80vw"
             className="object-cover pointer-events-none"
+          />
+
+          {/* <video
+            src="/videos/about.mp4" // 👉 put your file in /public/videos
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 m-auto h-[60%] w-[60%] object-contain z-10"
+          /> */}
+          <Image
+            src="/images/giffffff.mov-ezgif.com-optimize.gif"
+            alt="Animated GIF"
+            width={550} // adjust to your design
+            height={350} // adjust to your design
+            className="absolute inset-0 m-auto object-contain z-10"
+            unoptimized // ⚡ important for GIFs, so Next.js doesn’t try to optimize
           />
         </section>
 
         {/* Gallery with reveal on scroll */}
         <div className="space-y-0">
-          {/* remove gaps so images butt up; change to space-y-8 for gaps */}
-          {images.map((src, index) => (
-            <RevealOnScroll key={index} amount={0.4} y={28} duration={0.55}>
+          {/* First image: show immediately */}
+          <div className="relative w-full">
+            <Image
+              src={images[0]}
+              alt="About image 1"
+              width={1920}
+              height={1080}
+              className="w-full h-auto object-cover"
+              loading="eager"
+              priority
+            />
+          </div>
+
+          {/* Remaining images: reveal on scroll */}
+          {images.slice(1).map((src, index) => (
+            <RevealOnScroll key={src} amount={0.4} y={28} duration={0.55}>
               <div className="relative w-full">
                 <Image
                   src={src}
-                  alt={`About image ${index + 1}`}
+                  alt={`About image ${index + 2}`}
                   width={1920}
                   height={1080}
                   className="w-full h-auto object-cover will-change-transform"
-                  loading={index === 0 ? "eager" : "lazy"}
+                  loading="lazy"
                 />
               </div>
             </RevealOnScroll>

@@ -3,16 +3,6 @@
 import { useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-import {
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBubbleText,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconPhone,
-  IconTerminal2,
-} from "@tabler/icons-react";
 import WelcomeScreen from "components/welcome-screen";
 import Navigation from "components/navbar";
 import Image from "next/image";
@@ -20,75 +10,15 @@ import SplitText from "components/ui/reactbits/SplitText";
 import TextType from "components/ui/reactbits/TextType";
 import { ExperienceSection } from "components/experience";
 import { MovingTags } from "components/moving-tags";
-import { ProjectsSection } from "components/project";
 import { ToolsSkills } from "components/tools-skills";
 import { InstagramPortfolio } from "components/instagram-portfolio";
 import Testimonials from "components/testimonial";
 import FAQ from "components/faq";
-import { FloatingDock } from "components/ui/aceternity/FloatingDock";
-import { SmoothCursor } from "components/ui/magicui/SmoothCursor";
-import { Youtube } from "components/youtube";
 import { CharacterShowcase } from "components/character-showcase";
-import { BehanceProject, ProjectCard } from "components/behance-project-card";
+import { BehanceProject } from "components/behance-project-card";
 import { FeaturedProjects } from "components/new-project";
-const links = [
-  {
-    title: "Home",
-    icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Products",
-    icon: (
-      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "FAQ",
-    icon: (
-      <IconBubbleText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/#faq",
-  },
-  // {
-  //   title: "Aceternity UI",
-  //   icon: (
-  //     <Image
-  //       src="https://assets.aceternity.com/logo-dark.png"
-  //       width={20}
-  //       height={20}
-  //       alt="Aceternity Logo"
-  //     />
-  //   ),
-  //   href: "#",
-  // },
-  {
-    title: "Contact",
-    icon: (
-      <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/contact",
-  },
-
-  {
-    title: "Instagram",
-    icon: (
-      <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://www.instagram.com/mylittlebubbble/",
-  },
-  {
-    title: "LinkedIn",
-    icon: (
-      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://www.linkedin.com/in/anusha-agrawal-951a0717b/",
-  },
-];
+import { StorySection } from "components/chai-break";
+import { BottomNav } from "components/bottom-nav";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -119,7 +49,7 @@ export default function Home() {
         {/* HERO: background limited to first viewport */}
         <section className="relative h-[100svh] w-full overflow-hidden">
           <Image
-            src="/images/Homepage.png"
+            src="/images/homepage.png"
             alt="Homepage background"
             fill
             priority
@@ -158,7 +88,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTENT BELOW HERO */}
         <section className="relative py-8">
           <ExperienceSection />
         </section>
@@ -166,10 +95,6 @@ export default function Home() {
         <section className="relative py-8">
           <MovingTags />
         </section>
-
-        {/* <section className="relative py-8">
-          <ProjectsSection />
-        </section> */}
 
         <section className="relative">
           <FeaturedProjects />
@@ -181,12 +106,12 @@ export default function Home() {
           <ToolsSkills />
         </section>
 
-        <section className="relative py-20">
+        <section className="relative pt-20">
           <InstagramPortfolio />
         </section>
 
-        <section className="relative py-20">
-          <Youtube />
+        <section className="relative">
+          <StorySection />
         </section>
 
         <section
@@ -203,22 +128,7 @@ export default function Home() {
         </section>
 
         <section className="relative">
-          <Image
-            src="/images/footer.png"
-            alt="footer"
-            width={2400} // <-- use your image’s actual pixel width
-            height={800} // <-- use your image’s actual pixel height
-            sizes="100vw"
-            priority
-            style={{ width: "100%", height: "auto" }}
-            className="pointer-events-none"
-          />
-          <div className=" absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
-            <FloatingDock
-              mobileClassName="translate-y-20" // only for demo, remove for production
-              items={links}
-            />
-          </div>
+          <BottomNav />
         </section>
       </main>
     </>

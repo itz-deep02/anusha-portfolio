@@ -3,6 +3,7 @@
 import type * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "lib/utils";
+import { IconMinus, IconPlus } from "@tabler/icons-react";
 
 function Accordion(
   props: React.ComponentProps<typeof AccordionPrimitive.Root>
@@ -44,14 +45,14 @@ function AccordionTrigger({
           aria-hidden
           className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200 group-data-[state=open]:hidden"
         >
-          +
+          <IconPlus stroke={2} className="h-4 w-4" />
         </span>
         {/* minus (shown when open) */}
         <span
           aria-hidden
           className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200 hidden group-data-[state=open]:inline"
         >
-          −
+          <IconMinus stroke={2} className="h-4 w-4" />
         </span>
 
         {children}

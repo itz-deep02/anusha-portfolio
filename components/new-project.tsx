@@ -494,7 +494,7 @@ function ProjectCard({
 
 export function FeaturedProjects() {
   return (
-    <div className="bg-white py-16 px-4">
+    <div className="bg-white py-16 px-4" id="work">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-slate-900 mb-16">
           Featured Projects
