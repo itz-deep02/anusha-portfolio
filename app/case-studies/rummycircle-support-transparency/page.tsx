@@ -1,5 +1,7 @@
-import { RevealOnScroll } from "app/about/page";
+"use client";
+
 import Navigation from "components/navbar";
+import { RevealOnScroll } from "components/ui/RevealOnScroll";
 import Image from "next/image";
 import React from "react";
 
