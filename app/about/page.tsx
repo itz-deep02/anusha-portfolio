@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
-import Navigation from "components/navbar";
+import { Navigation } from "components/navbar";
 import { RevealOnScroll } from "components/ui/RevealOnScroll";
 
 const images = [

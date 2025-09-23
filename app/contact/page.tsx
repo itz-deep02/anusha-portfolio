@@ -1,4 +1,4 @@
-import Navigation from "components/navbar";
+import { Navigation } from "components/navbar";
 import TextType from "components/ui/reactbits/TextType";
 import Image from "next/image";
 import Link from "next/link";

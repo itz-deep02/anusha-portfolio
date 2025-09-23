@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 import WelcomeScreen from "components/welcome-screen";
-import Navigation from "components/navbar";
+import { Navigation } from "components/navbar";
 import Image from "next/image";
 import SplitText from "components/ui/reactbits/SplitText";
 import TextType from "components/ui/reactbits/TextType";
