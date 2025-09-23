@@ -23,7 +23,7 @@ const images = [
   "/images/8.png",
 ];
 
-function RevealOnScroll({
+export function RevealOnScroll({
   children,
   amount = 0.15, // how much of the element must be visible to trigger
   y = 24, // initial offset

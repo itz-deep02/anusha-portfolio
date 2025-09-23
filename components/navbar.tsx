@@ -25,7 +25,7 @@ export default function Navigation() {
       }`}
     >
       <div
-        className={`bg-transparent z-50 shadow-lg backdrop-blur-xl py-4 transition-all border border-white/20 duration-300 ease-in-out ${
+        className={`bg-transparent z-50 shadow-lg backdrop-blur-2xl py-4 transition-all border border-white/20 duration-300 ease-in-out ${
           isScrolled ? "rounded-full px-4  " : "rounded-full px-8 "
         }`}
       >

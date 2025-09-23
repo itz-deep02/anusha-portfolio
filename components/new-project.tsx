@@ -287,7 +287,7 @@ const projects = [
     ],
     cta: {
       label: "View case study",
-      href: "/case-studies/support-load",
+      href: "/case-studies/rummycircle-support-transparency",
       variant: "dark",
     },
     tags: ["Real Money Gaming App", "B2C", "UX Case Study"],
