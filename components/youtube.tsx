@@ -49,7 +49,7 @@ export function Youtube() {
   return (
     <div className="">
       <div className="flex justify-end py-4">
-        <div className="flex items-center gap-2 p-4 text-sm text-gray-600 bg-white/60 shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
+        <div className="flex items-center gap-2 p-4 text-sm text-violet-400 bg-white/60 shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
           <div className="flex items-center gap-1">
             <Image
               src="/icons/youtube.webp"
@@ -59,12 +59,12 @@ export function Youtube() {
             />
             <Link
               href="https://www.youtube.com/@mylittlebubbble"
-              className="text-blue-600 hover:underline cursor-pointer font-semibold"
+              className="text-violet-400 hover:underline cursor-pointer font-semibold"
             >
               Visit YouTube
             </Link>
           </div>
-          <ArrowRight className="h-5 w-5" />
+          <ArrowRight color="#9583F9" className="h-5 w-5" />
         </div>
       </div>
 

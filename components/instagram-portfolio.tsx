@@ -96,7 +96,7 @@ export function InstagramPortfolio() {
                 width={20}
                 className="h-5 w-5 "
               />
-              Visit Instagram <ArrowRight className="h-5 w-5" />
+              Visit Instagram <ArrowRight color="#9583F9" className="h-5 w-5" />
             </Link>
           </div>
 
