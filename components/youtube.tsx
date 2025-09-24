@@ -49,7 +49,7 @@ export function Youtube() {
   return (
     <div className="">
       <div className="flex justify-end py-4">
-        <div className="flex items-center gap-2 p-4 text-sm text-gray-600 bg-[rgba(231,236,235,0.08)] shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
+        <div className="flex items-center gap-2 p-4 text-sm text-gray-600 bg-white/60 shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
           <div className="flex items-center gap-1">
             <Image
               src="/icons/youtube.webp"

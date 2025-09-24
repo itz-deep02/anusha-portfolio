@@ -37,17 +37,22 @@ export default function FAQ() {
           Frequently Asked Questions
         </h2>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion
+          type="single"
+          defaultValue="item-0"
+          collapsible
+          className="space-y-4"
+        >
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
               className="bg-white/90 backdrop-blur-sm rounded-lg border-0 shadow-sm px-6 py-2"
             >
-              <AccordionTrigger className="text-slate-900 font-semibold text-left hover:no-underline">
+              <AccordionTrigger className="text-slate-900 font-semibold text-2xl text-left hover:no-underline items-center">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed">
+              <AccordionContent className="text-slate-700 text-xl leading-relaxed pl-10">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

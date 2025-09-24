@@ -3,7 +3,8 @@
 import type * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "lib/utils";
-import { IconMinus, IconPlus } from "@tabler/icons-react";
+import { IconMinus } from "@tabler/icons-react";
+import Image from "next/image";
 
 function Accordion(
   props: React.ComponentProps<typeof AccordionPrimitive.Root>
@@ -35,7 +36,7 @@ function AccordionTrigger({
         data-slot="accordion-trigger"
         // Make the trigger a group so children can react to its data-state
         className={cn(
-          "group focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
+          "group focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
           className
         )}
         {...props}
@@ -43,16 +44,16 @@ function AccordionTrigger({
         {/* plus (shown when closed) */}
         <span
           aria-hidden
-          className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200 group-data-[state=open]:hidden"
+          className="text-muted-foreground pointer-events-none size-6 shrink-0 translate-y-0.5 transition-all duration-200 group-data-[state=open]:hidden"
         >
-          <IconPlus stroke={2} className="h-4 w-4" />
+          <Image src="/icons/faq-plus.png" alt="plus" height={24} width={24} />
         </span>
         {/* minus (shown when open) */}
         <span
           aria-hidden
-          className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200 hidden group-data-[state=open]:inline"
+          className="text-muted-foreground pointer-events-none size-6 shrink-0 translate-y-0.5 transition-all duration-200 hidden group-data-[state=open]:inline"
         >
-          <IconMinus stroke={2} className="h-4 w-4" />
+          <IconMinus stroke={6} className="h-6 w-6" color="#FCB917" />
         </span>
 
         {children}

@@ -48,7 +48,7 @@ export function StorySection() {
             </div>
 
             {/* Content paragraphs */}
-            <div className="space-y-6 text-gray-700 text-lg leading-relaxed mb-8">
+            <div className="space-y-6 text-gray-700 text-2xl leading-relaxed mb-8">
               <p>
                 I&apos;m Anusha, a product designer who loves turning ideas into
                 experiences that feel simple, intuitive, and a little bit fun.
@@ -69,7 +69,7 @@ export function StorySection() {
             {/* CTA Button */}
             <Link
               href="/about"
-              className="bg-violet-600 hover:bg-violet-700 text-slate-50 px-8 py-4 rounded-xl font-medium text-lg transition-colors flex items-center gap-2 w-fit"
+              className="bg-violet-600 hover:bg-violet-700 text-slate-50 px-8 py-4 rounded-xl font-medium text-lg transition-colors flex items-center gap-2 w-fit "
             >
               Read my full story
               <ArrowRight className="h-5 w-5" />

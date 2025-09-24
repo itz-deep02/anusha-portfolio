@@ -29,8 +29,9 @@ body {
 }
 
 html, body {
-  font-family: var(--font-geist), sans-serif;
-  @apply text-indigo-950;
+  /* font-family: var(--font-geist), sans-serif; */
+
+  @apply text-indigo-950 font-['Geist'];
 }
 
 /* Keyframes */

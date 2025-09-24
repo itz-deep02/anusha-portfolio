@@ -82,9 +82,9 @@ export function BottomNav() {
         style={{ width: "100%", height: "auto" }}
         className="pointer-events-none"
       />
-      <div className=" absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
+      {/* <div className=" absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
         <FloatingDock mobileClassName="translate-y-20" items={links} />
-      </div>
+      </div> */}
     </>
   );
 }

@@ -7,6 +7,7 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   pauseOnHover?: boolean;
   children: React.ReactNode;
   vertical?: boolean;
+  componentGap?: boolean;
   repeat?: number;
 }
 
@@ -17,6 +18,7 @@ export function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  componentGap,
   ...props
 }: MarqueeProps) {
   return (
@@ -37,7 +39,8 @@ export function Marquee({
               ? "flex-col animate-marquee-vertical"
               : "flex-row animate-marquee",
             reverse && "marquee-reverse",
-            pauseOnHover && "group-hover:![animation-play-state:paused]"
+            pauseOnHover && "group-hover:![animation-play-state:paused]",
+            componentGap && "gap-6"
           )}
         >
           {children}

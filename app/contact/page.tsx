@@ -26,7 +26,7 @@ function Contact() {
             showCursor={true}
             cursorCharacter="|"
             loop={false}
-            className="text-neutral-900 text-6xl  underline underline-offset-16 decoration-[#FEBC18]"
+            className="text-neutral-900 text-6xl font-semibold  underline underline-offset-16 decoration-[#FEBC18]"
             textColors={["text-neutral-900"]}
           />
           <div className="text-neutral-900 text-2xl w-2/3">
@@ -39,12 +39,12 @@ function Contact() {
               <Image
                 src="/icons/contact-email.svg"
                 alt="email"
-                height={20}
-                width={20}
+                height={24}
+                width={24}
               />
               <Link
                 href="mailto:anushagarwal98@gmail.com"
-                className="text-indigo-950 hover:text-blue-700 transition-colors"
+                className="text-indigo-950 hover:text-blue-700 text-2xl transition-colors"
               >
                 anushagarwal98@gmail.com
               </Link>
@@ -54,12 +54,12 @@ function Contact() {
               <Image
                 src="/icons/contact-linkedin.svg"
                 alt="email"
-                height={20}
-                width={20}
+                height={24}
+                width={24}
               />
               <Link
                 href="https://www.linkedin.com/in/anusha-agrawal-951a0717b/"
-                className="text-indigo-950 hover:text-blue-700 transition-colors underline underline-offset-4"
+                className="text-indigo-950 hover:text-blue-700 text-2xl transition-colors underline underline-offset-4"
               >
                 LinkedIn
               </Link>

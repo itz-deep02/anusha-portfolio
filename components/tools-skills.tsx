@@ -89,8 +89,8 @@ export function ToolsSkills() {
             logos={tools}
             speed={120}
             direction="left"
-            logoHeight={48}
-            gap={40}
+            logoHeight={80}
+            gap={52}
             pauseOnHover
             scaleOnHover
             fadeOut

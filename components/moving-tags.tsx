@@ -18,7 +18,7 @@ const tags = [
 
 const tagClass = [
   "flex items-center justify-center",
-  "px-6 py-3 rounded-full border-2 whitespace-nowrap text-base font-bold rounded-[120px] outline outline-4 outline-offset-[-4px] outline-purple-300",
+  "px-6 py-3 rounded-full border-2 whitespace-nowrap text-xl font-bold rounded-[120px] outline outline-4 outline-offset-[-4px] outline-purple-300",
   // light
   "border-purple-300 bg-white",
   // hover

@@ -11,14 +11,12 @@ export function ExperienceSection() {
             separator=","
             direction="up"
             duration={2}
-            className="inline"
+            className="inline text-7xl"
             startWhen
           />
           <span>+</span>
         </div>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-bold">
-          Projects Done
-        </p>
+        <p className="text-2x font-bold">Projects Done</p>
       </div>
 
       <div className="text-center">
@@ -29,14 +27,12 @@ export function ExperienceSection() {
             separator=","
             direction="up"
             duration={2}
-            className="inline"
+            className="inline text-7xl"
             startWhen
           />
           <span>+</span>
         </div>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-bold">
-          Years of Experience
-        </p>
+        <p className="text-2x font-bold">Years of Experience</p>
       </div>
 
       <div className="text-center">
@@ -47,14 +43,12 @@ export function ExperienceSection() {
             separator=","
             direction="up"
             duration={2}
-            className="inline"
+            className="inline text-7xl"
             startWhen
           />
           <span>%</span>
         </div>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-bold">
-          Customer Satisfaction
-        </p>
+        <p className="text-2x font-bold">Customer Satisfaction</p>
       </div>
     </div>
   );

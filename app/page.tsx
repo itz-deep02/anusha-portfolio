@@ -127,7 +127,7 @@ export default function Home() {
 
         <BehanceProject />
 
-        <section className="relative py-8">
+        <section className="relative py-28">
           <ToolsSkills />
         </section>
 

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { InteractiveHoverButton } from "./ui/magicui/InteractiveHoverButton";
+import { ArrowRight } from "lucide-react";
 
 export function BehanceProject() {
   return (
     <div className="pb-20 p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1218px] mx-auto">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Travellogo Travel Portal */}
@@ -66,7 +66,7 @@ export function ProjectCard({
 
   return (
     <div
-      className={`relative rounded-3xl p-8 flex flex-col ${className}`}
+      className={`relative rounded-3xl p-4 flex flex-col ${className}`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -75,8 +75,8 @@ export function ProjectCard({
       }}
     >
       {/* Mockup Image Container */}
-      <div className="mb-4 relative min-h-0">
-        <div className="w-full h-fit bg-white rounded-3xl shadow-lg overflow-hidden">
+      <div className="mb-4 relative min-h-0 w-fit">
+        <div className="w-fit h-fit bg-white rounded-3xl overflow-hidden">
           <img
             src={mockupImage}
             alt={title}
@@ -88,7 +88,7 @@ export function ProjectCard({
       {/* Content */}
       <div className="space-y-3">
         <h2
-          className={`text-2xl font-bold ${textColor} text-balance leading-tight`}
+          className={`text-2xl font-medium ${textColor} text-balance leading-tight`}
         >
           {title}
         </h2>
@@ -108,9 +108,12 @@ export function ProjectCard({
 
         <div className="pt-3">
           <Link href={href}>
-            <InteractiveHoverButton className="bg-gray-900 hover:bg-gray-800 text-white rounded-full px-6 py-3 text-sm font-medium flex items-center gap-2 w-fit">
-              View case study
-            </InteractiveHoverButton>
+            <div className="group relative bg-indigo-950 text-sm text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-out w-fit">
+              <span className="flex items-center gap-2">
+                View case study
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover:translate-x-2" />
+              </span>
+            </div>
           </Link>
         </div>
       </div>

@@ -77,20 +77,25 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="w-80 h-[360px] mx-4 bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:bg-white/80"
+                className="py-0 w-96 h-[600px] mx-4 bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:bg-white/80"
               >
                 <div className="p-6 h-full flex flex-col">
                   {/* Quote icon */}
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center mb-6"
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
                     style={{ backgroundColor: testimonial.accentColor }}
                   >
-                    <Quote className="w-4 h-4 text-white" />
+                    <Image
+                      src="/icons/quotes.png"
+                      alt="quotes"
+                      width={24}
+                      height={24}
+                    />
                   </div>
 
                   {/* Testimonial content */}
                   <div className="flex-1">
-                    <p className="text-slate-700 text-sm font-['Geist'] leading-relaxed mb-6 line-clamp-6 overflow-hidden">
+                    <p className="text-slate-700 text-lg leading-relaxed mb-6 overflow-hidden">
                       {testimonial.content}
                     </p>
                   </div>
@@ -105,10 +110,10 @@ export default function Testimonials() {
                       height={40}
                     />
                     <div>
-                      <div className="font-semibold text-slate-900 text-sm">
+                      <div className="font-semibold text-slate-900 text-lg">
                         {testimonial.name}
                       </div>
-                      <div className="text-slate-600 text-xs">
+                      <div className="text-slate-600 text-base">
                         {testimonial.role}
                       </div>
                     </div>
