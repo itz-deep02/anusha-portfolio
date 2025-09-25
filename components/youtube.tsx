@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/Dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/Dialog";
 import { cn } from "lib/utils";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -47,8 +42,8 @@ const videos = [
 
 export function Youtube() {
   return (
-    <div className="">
-      <div className="flex justify-end py-4">
+    <>
+      <div className="flex justify-end py-8">
         <div className="flex items-center gap-2 p-4 text-sm text-violet-400 bg-white/60 shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px]">
           <div className="flex items-center gap-1">
             <Image
@@ -90,7 +85,7 @@ export function Youtube() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

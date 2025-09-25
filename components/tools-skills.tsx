@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import LogoLoop from "./ui/reactbits/Looplogo";
+import Image from "next/image";
 
 const tools = [
   { alt: "AE", src: "/images/ae.png" },
@@ -27,17 +28,24 @@ export function ToolsSkills() {
     <>
       <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent" />
       <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
-      <div className=" mx-auto text-center">
-        <motion.h2
-          className="text-4xl font-bold text-indigo-950 mb-4"
+      <div className="mx-auto text-center">
+        <motion.div
+          className="relative text-6xl font-bold font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           Tools & Skills
-        </motion.h2>
+          {/* <Image
+            src="/icons/pencil.svg"
+            alt="Flower"
+            width={40}
+            height={40}
+            className="w-8 h-8 absolute -left-[10px] -top-[10px]"
+          /> */}
+        </motion.div>
         <motion.p
-          className="text-lg text-indigo-950 mb-12"
+          className="text-2xl text-indigo-950 mb-12"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}

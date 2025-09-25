@@ -7,20 +7,23 @@ import Image from "next/image";
 import React from "react";
 
 const images = [
-  "/images/project-3/1.webp",
-  "/images/project-3/2.webp",
-  "/images/project-3/3.mp4",
-  "/images/project-3/4.webp",
-  "/images/project-3/5.webp",
-  "/images/project-3/6.webp",
-  "/images/project-3/7.webp",
-  "/images/project-3/8.webp",
-  "/images/project-3/9.webp",
-  "/images/project-3/10.webp",
-  "/images/project-3/11.webp",
+  "/images/project-4/1.webp",
+  "/images/project-4/2.webp",
+  "/images/project-4/3.mp4",
+  "/images/project-4/4.webp",
+  "/images/project-4/5.webp",
+  "/images/project-4/6.webp",
+  "/images/project-4/7.webp",
+  "/images/project-4/8.webp",
+  "/images/project-4/9.webp",
+  "/images/project-4/10.webp",
+  "/images/project-4/11.webp",
+  "/images/project-4/12.webp",
+  "/images/project-4/13.webp",
+  "/images/project-4/14.webp",
 ];
 
-export default function My11Circle() {
+export default function TurboRummy() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

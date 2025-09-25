@@ -1,7 +1,6 @@
-import { ArrowRight, Instagram } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Marquee } from "./ui/magicui/Marique";
 import Image from "next/image";
-import { Youtube } from "./youtube";
 import Link from "next/link";
 
 const leftMarqueePosts = [
@@ -9,52 +8,58 @@ const leftMarqueePosts = [
     title: "8 THINGS MOTHER'S HATE",
     views: "35 million views",
     illustration: "/images/reel-1.png",
+    video: "/videos/greeting.mp4",
   },
   {
     title: "WHEN YOU HAVE A SIBLING",
     views: "12 million views",
     illustration: "/images/reel-2.png",
+    video: "/videos/greeting.mp4",
   },
   {
     title: "WHICH PAPA BOUGHT",
     views: "12 million views",
     illustration: "/images/reel-3.png",
+    video: "/videos/greeting.mp4",
   },
   {
     title: "8 THINGS MOTHER'S HATE",
     views: "35 million views",
     illustration: "/images/reel-4.png",
+    video: "/videos/greeting.mp4",
   },
   {
     title: "WHEN YOU HAVE A SIBLING",
     views: "12 million views",
     illustration: "/images/reel-5.png",
+    video: "/videos/greeting.mp4",
   },
   {
     title: "WHICH PAPA BOUGHT",
     views: "12 million views",
     illustration: "/images/reel-6.png",
+    video: "/videos/greeting.mp4",
   },
 ];
 
 export function InstagramPortfolio() {
   return (
-    <div
-      className="relative bg-no-repeat bg-top py-4"
-      style={{
-        backgroundImage: "url('/images/beyond-portfolio.png')",
-        backgroundSize: "100% auto",
-      }}
-      id="instagram"
-    >
-      <div className="container mx-auto px-6 grid gap-8 place-items-center min-h-[calc(100svh)] py-8">
+    <div className="relative bg-no-repeat bg-top py-8" id="instagram">
+      <div className="grid gap-8 place-items-center">
         {/* Left Side - Portfolio Content */}
         <div className="space-y-8 flex flex-col w-full">
           <div className="space-y-6">
-            <div className="flex items-center gap-3 justify-center">
-              <h1 className="text-4xl font-bold text-slate-900">
+            <div className=" flex items-center gap-3 justify-center">
+              <div className="relative text-6xl font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] font-bold">
                 Beyond the Portfolio
-              </h1>
+                <Image
+                  src="/icons/star.svg"
+                  alt="Flower"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 absolute -left-[10px] -top-[10px]"
+                />
+              </div>
             </div>
 
             <p className="text-2xl text-slate-700 leading-relaxed text-center">
@@ -94,13 +99,11 @@ export function InstagramPortfolio() {
                 alt="insta"
                 height={20}
                 width={20}
-                className="h-5 w-5 "
+                className="h-5 w-5"
               />
               Visit Instagram <ArrowRight color="#9583F9" className="h-5 w-5" />
             </Link>
           </div>
-
-          {/* </Card> */}
         </div>
 
         <div className="relative overflow-hidden">
@@ -116,16 +119,108 @@ export function InstagramPortfolio() {
                     width={340}
                     height={604}
                   />
+                  // <ReelTile key={index} item={post} />
                 ))}
               </Marquee>
             </div>
           </div>
         </div>
-
-        <div className="min-w-0 w-full">
-          <Youtube />
-        </div>
       </div>
     </div>
   );
 }
+
+// import { useRef, useState, useEffect } from "react";
+
+// type Reel = {
+//   title: string;
+//   views: string;
+//   illustration: string; // poster
+//   video?: string; // optional
+// };
+
+// function ReelTile({ item }: { item: Reel }) {
+//   const videoRef = useRef<HTMLVideoElement | null>(null);
+//   const [hovered, setHovered] = useState(false);
+//   const [inView, setInView] = useState(false);
+
+//   // Only “activate” the video when tile is on screen
+//   const containerRef = useRef<HTMLDivElement | null>(null);
+//   useEffect(() => {
+//     const el = containerRef.current;
+//     if (!el) return;
+//     const io = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((e) => setInView(e.isIntersecting));
+//       },
+//       { rootMargin: "200px" } // pre-activate slightly before visible
+//     );
+//     io.observe(el);
+//     return () => io.disconnect();
+//   }, []);
+
+//   useEffect(() => {
+//     const v = videoRef.current;
+//     if (!v) return;
+//     if (hovered && inView) {
+//       v.play().catch(() => {});
+//     } else {
+//       v.pause();
+//       v.currentTime = 0; // rewind on leave
+//     }
+//   }, [hovered, inView]);
+
+//   // For touch devices: toggle play/pause on tap
+//   const onTap = () => {
+//     const v = videoRef.current;
+//     if (!v) return;
+//     if (v.paused) {
+//       setHovered(true);
+//       v.play().catch(() => {});
+//     } else {
+//       setHovered(false);
+//       v.pause();
+//       v.currentTime = 0;
+//     }
+//   };
+
+//   return (
+//     <div
+//       ref={containerRef}
+//       className="relative w-[340px] h-[604px] rounded-xl overflow-hidden bg-black/5"
+//       onMouseEnter={() => setHovered(true)}
+//       onMouseLeave={() => setHovered(false)}
+//       onClick={onTap}
+//     >
+//       {/* Poster image (always rendered) */}
+//       <Image
+//         src={item.illustration}
+//         alt={item.title}
+//         fill
+//         sizes="340px"
+//         className={`object-contain transition-opacity duration-200 ${
+//           hovered && item.video ? "opacity-0" : "opacity-100"
+//         }`}
+//         priority={false}
+//       />
+
+//       {/* Video (only if provided) */}
+//       {item.video && (
+//         <video
+//           ref={videoRef}
+//           // Don’t set src until inView to avoid preloading off-screen videos:
+//           src={inView ? item.video : undefined}
+//           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
+//             hovered ? "opacity-100" : "opacity-0"
+//           }`}
+//           muted
+//           loop
+//           playsInline
+//           preload="none" // keep bandwidth light
+//           poster={item.illustration}
+//           disablePictureInPicture
+//         />
+//       )}
+//     </div>
+//   );
+// }

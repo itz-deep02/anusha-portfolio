@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const characterImages = [
-  "/images/character-1.png", // peaceful with wand
-  "/images/character-2.png", // drinking coffee
-  "/images/character-3.png", // working at desk
-  "/images/character-4.png", // relaxing in bed
-  "/images/character-5.png", // thinking about food
+  "/images/character-1.webp", // peaceful with wand
+  "/images/character-2.webp", // drinking coffee
+  "/images/character-3.webp", // working at desk
+  "/images/character-4.webp", // relaxing in bed
+  "/images/character-5.webp", // thinking about food
 ];
 
 export function CharacterShowcase() {
@@ -50,7 +50,7 @@ export function CharacterShowcase() {
             {/* Floating "Click me" text */}
             {cursorPos && (
               <span
-                className="absolute text-indigo-950/70 text-sm font-semibold pointer-events-none select-none"
+                className="absolute p-2 border text-indigo-950/70 text-sm font-semibold pointer-events-none select-none"
                 style={{
                   left: cursorPos.x + 10, // offset so text doesn’t overlap cursor
                   top: cursorPos.y + 10,

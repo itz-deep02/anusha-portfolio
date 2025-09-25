@@ -23,7 +23,7 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export function FAQ() {
   return (
     <section
       className="py-20 bg-cover bg-center bg-no-repeat relative"
@@ -33,9 +33,9 @@ export default function FAQ() {
       id="FAQ"
     >
       <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">
+        <div className="text-6xl font-bold font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] text-center text-slate-900 mb-16">
           Frequently Asked Questions
-        </h2>
+        </div>
 
         <Accordion
           type="single"

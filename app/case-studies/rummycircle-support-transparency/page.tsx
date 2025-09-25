@@ -1,6 +1,6 @@
 "use client";
 
-import { BottomNav } from "components/bottom-nav";
+import { Footer } from "components/Footer";
 import { Navigation } from "components/navbar";
 import CountUp from "components/ui/reactbits/CountUp";
 // import { RevealOnScroll } from "components/ui/RevealOnScroll";
@@ -61,7 +61,6 @@ export default function RummyCircleSupportTransparency() {
         style={{ scaleX }}
       />
       {images.map((src, index) => (
-        // <RevealOnScroll key={src} amount={0.4} y={28} duration={0.55}>
         <div className="relative w-full" key={src}>
           {src.endsWith(".mp4") ? (
             <video
@@ -84,7 +83,6 @@ export default function RummyCircleSupportTransparency() {
             />
           )}
         </div>
-        // </RevealOnScroll>
       ))}
       <div className="flex items-center flex-col justify-between py-16 gap-24 mx-60">
         <div className="self-start text-left">
@@ -115,7 +113,7 @@ export default function RummyCircleSupportTransparency() {
         </div>
       </div>
       <section className="relative">
-        <BottomNav />
+        <Footer />
       </section>
     </div>
   );

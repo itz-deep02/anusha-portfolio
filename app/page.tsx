@@ -6,20 +6,18 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import WelcomeScreen from "components/welcome-screen";
 import { Navigation } from "components/navbar";
 import Image from "next/image";
-import SplitText from "components/ui/reactbits/SplitText";
-import TextType from "components/ui/reactbits/TextType";
 import { ExperienceSection } from "components/experience";
 import { MovingTags } from "components/moving-tags";
 import { ToolsSkills } from "components/tools-skills";
-import { InstagramPortfolio } from "components/instagram-portfolio";
-import Testimonials from "components/testimonial";
-import FAQ from "components/faq";
+import { Testimonials } from "components/testimonial";
+import { FAQ } from "components/faq";
 import { CharacterShowcase } from "components/character-showcase";
 import { BehanceProject } from "components/behance-project-card";
 import { FeaturedProjects } from "components/new-project";
 import { StorySection } from "components/chai-break";
-import { BottomNav } from "components/bottom-nav";
 import Link from "next/link";
+import { BeyondPortfolio } from "components/beyond-portfolio";
+import { Footer } from "components/Footer";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -33,7 +31,7 @@ export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
   const handleWelcomeComplete = () => setShowWelcome(false);
 
-  // if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
+  if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
 
   return (
     <>
@@ -50,7 +48,7 @@ export default function Home() {
         {/* HERO: background limited to first viewport */}
         <section className="relative h-screen w-full overflow-hidden">
           <Image
-            src="/images/new-homepage.png"
+            src="/images/Homebanner.webp"
             alt="Homepage bg"
             fill
             priority
@@ -58,7 +56,7 @@ export default function Home() {
             className="object-cover z-0 pointer-events-none"
           />
 
-          <div className="absolute z-10 gap-4 h-full text-center top-[27%] left-[4%]">
+          {/* <div className="absolute z-10 gap-4 h-full text-center top-[27%] left-[4%]">
             <TextType
               text={[
                 "Design digital experiences that people trust, love, and return to!",
@@ -71,8 +69,8 @@ export default function Home() {
               className="text-2xl text-[#0C0C49]"
               textColors={["text-[#0C0C49]"]}
               loop={true}
-            />
-            {/* <SplitText
+            /> */}
+          {/* <SplitText
               text="SOLVING PROBLEMS THROUGH DESIGN"
               className="text-4xl font-bold mb-4 text-[#0C0C49]"
               delay={50}
@@ -85,10 +83,10 @@ export default function Home() {
               rootMargin="-100px"
               textAlign="center"
             /> */}
-          </div>
+          {/* </div> */}
           <Link
             href="#instagram"
-            className="absolute bottom-[15%] left-[30%] w-40 h-10 bg-gradient-to-r from-indigo-600 via-pink-600 to-orange-300 rounded-3xl shadow-[0px_2.777604103088379px_2.777604103088379px_0px_rgba(0,0,0,0.25)]"
+            className="absolute bottom-[22%] left-[30%] w-40 h-10 bg-gradient-to-r from-indigo-600 via-pink-600 to-orange-300 rounded-3xl shadow-[0px_2.777604103088379px_2.777604103088379px_0px_rgba(0,0,0,0.25)]"
           >
             <div className="left-[16.67px] top-[8.33px] absolute inline-flex justify-start items-center gap-2">
               <div className="justify-start text-violet-50 text-base font-semibold font-['Geist'] leading-normal">
@@ -96,14 +94,14 @@ export default function Home() {
               </div>
             </div>
           </Link>
-          <video
+          {/* <video
             src="/videos/anusha-greeting.mp4"
             autoPlay
             loop
             muted
             playsInline
             className="absolute bottom-[8.5%] right-[0%] max-w-[450px]"
-          />
+          /> */}
           {/* <Image
             src="/images/white-bg.png"
             alt="bg"
@@ -131,8 +129,13 @@ export default function Home() {
           <ToolsSkills />
         </section>
 
-        <section className="relative pt-20">
-          <InstagramPortfolio />
+        <section
+          style={{
+            backgroundImage: "url('/images/beyond-portfolio.png')",
+          }}
+          className="relative py-20"
+        >
+          <BeyondPortfolio />
         </section>
 
         <section className="relative">
@@ -153,7 +156,7 @@ export default function Home() {
         </section>
 
         <section className="relative">
-          <BottomNav />
+          <Footer />
         </section>
       </main>
     </>

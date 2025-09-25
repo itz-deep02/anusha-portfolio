@@ -4,6 +4,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import { Navigation } from "components/navbar";
 import { RevealOnScroll } from "components/ui/RevealOnScroll";
+import { Footer } from "components/Footer";
 
 const images = [
   "/images/1.png",
@@ -95,6 +96,9 @@ export default function AboutPage() {
             </RevealOnScroll>
           ))}
         </div>
+        <section className="relative">
+          <Footer />
+        </section>
       </div>
     </>
   );

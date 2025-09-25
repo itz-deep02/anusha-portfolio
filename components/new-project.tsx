@@ -75,7 +75,11 @@ const projects = [
       { value: "8%", label: "Revenue Lift" },
       { value: "12%", label: "Increase in E-Fee" },
     ],
-    cta: { label: "Coming Soon", href: "#", variant: "medium" },
+    cta: {
+      label: "View case study",
+      href: "/case-studies/turbo-rummy",
+      variant: "medium",
+    },
     tags: ["New Feature", "B2C App", "Game Mechanics UX"],
     theme: "beige",
     layout: "image-left",

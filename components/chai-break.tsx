@@ -33,17 +33,17 @@ export function StorySection() {
                 alt="Cupcake"
                 width={32}
                 height={32}
-                className="w-8 h-8 absolute -left-5 -top-3"
+                className="w-8 h-8 absolute -left-3 -top-3"
               />
-              <h1 className="text-4xl font-bold text-indigo-900">
-                Chai break for my <span className="text-purple-400">Story</span>
-              </h1>
+              <div className="text-6xl font-bold text-indigo-950 font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold']">
+                Chai break for my <span className="text-violet-400">Story</span>
+              </div>
               <Image
                 src="/icons/flower-icon.svg"
                 alt="Flower"
                 width={32}
                 height={32}
-                className="w-8 h-8 absolute -right-5 -bottom-3"
+                className="w-8 h-8 absolute -right-3 -bottom-3"
               />
             </div>
 
