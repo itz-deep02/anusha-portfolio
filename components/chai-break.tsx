@@ -31,19 +31,19 @@ export function StorySection() {
               <Image
                 src="/icons/cupcake-icon.svg"
                 alt="Cupcake"
-                width={32}
-                height={32}
-                className="w-8 h-8 absolute -left-3 -top-3"
+                width={48}
+                height={48}
+                className="w-12 h-12 absolute -left-4 -top-1"
               />
-              <div className="text-5xl font-bold text-indigo-950 font-[fraunces]">
+              <div className="text-[56px] font-bold text-indigo-950 font-[fraunces]">
                 Chai break for my <span className="text-violet-400">Story</span>
               </div>
               <Image
                 src="/icons/flower-icon.svg"
                 alt="Flower"
-                width={32}
-                height={32}
-                className="w-8 h-8 absolute -right-3 -bottom-3"
+                width={48}
+                height={48}
+                className="w-12 h-12 absolute -right-6 -bottom-3"
               />
             </div>
 

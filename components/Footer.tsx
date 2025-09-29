@@ -19,7 +19,7 @@ export function Footer() {
           <div className="flex items-center gap-2 mb-12">
             <Image src="/images/icon.png" alt="icon" width={30} height={30} />
             <div className="flex items-center gap-2">
-              <div className="text-3xl font-bold text-slate-900 font-['Hiragino_Sans']">
+              <div className="text-3xl font-medium text-slate-900 font-['Hiragino_Sans']">
                 anusha
               </div>
               <div className="w-2 h-2 bg-white rounded-full" />

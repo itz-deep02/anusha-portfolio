@@ -68,7 +68,7 @@ export function Testimonials() {
       }}
     >
       <div className="container mx-auto px-6">
-        <div className="text-6xl font-bold text-center text-slate-900 mb-16 font-[fraunces]">
+        <div className="text-[56px] font-bold text-center text-slate-900 mb-16 font-[fraunces]">
           Here’s some gossip about me
         </div>
 

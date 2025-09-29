@@ -50,7 +50,7 @@ export function CharacterShowcase() {
             {/* Floating "Click me" text */}
             {cursorPos && (
               <span
-                className="absolute p-2 border text-indigo-950/70 text-sm font-semibold pointer-events-none select-none"
+                className="absolute rounded-2xl bg-white/40 p-2 border text-indigo-950/70 text-sm font-semibold pointer-events-none select-none"
                 style={{
                   left: cursorPos.x + 10, // offset so text doesn’t overlap cursor
                   top: cursorPos.y + 10,

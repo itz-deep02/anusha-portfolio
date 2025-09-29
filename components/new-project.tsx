@@ -235,9 +235,9 @@ export function FeaturedProjects() {
   return (
     <div className="bg-white py-16 px-4" id="work">
       <div className="max-w-[1218px] mx-auto">
-        <h1 className="text-4xl font-bold text-center text-slate-900 mb-16">
+        <div className="text-[56px] font-bold font-[fraunces] text-center text-slate-900 mb-16">
           Featured Projects
-        </h1>
+        </div>
 
         <div className="space-y-16">
           {projects.map((p) => (

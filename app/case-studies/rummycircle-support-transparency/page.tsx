@@ -86,14 +86,16 @@ export default function RummyCircleSupportTransparency() {
       ))}
       <div className="flex items-center flex-col justify-between py-16 gap-24 mx-60">
         <div className="self-start text-left">
-          <h2 className="text-6xl font-bold text-neutral-900 mb-2">Impact</h2>
+          <div className="text-[56px] font-bold font-[fraunces] text-neutral-900 mb-2">
+            Impact
+          </div>
           <div className="w-44 h-1 bg-orange-400 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center lg:text-left">
-              <div className="text-5xl text-center lg:text-6xl font-bold text-red-950 mb-3">
+              <div className="text-5xl text-center lg:text-[56px] font-bold text-red-950 mb-3">
                 <CountUp
                   from={0}
                   to={metric.value}

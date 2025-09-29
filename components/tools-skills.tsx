@@ -29,29 +29,32 @@ export function ToolsSkills() {
       <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent" />
       <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
       <div className="mx-auto text-center">
-        <motion.div
-          className="relative text-6xl font-bold font-[fraunces] mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Tools & Skills
-          {/* <Image
-            src="/icons/pencil.svg"
-            alt="Flower"
-            width={40}
-            height={40}
-            className="w-8 h-8 absolute -left-[10px] -top-[10px]"
-          /> */}
-        </motion.div>
-        <motion.p
-          className="text-2xl text-indigo-950 mb-12"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          The software, tools and technologies I am really good at:
-        </motion.p>
+        <div className="flex items-center flex-col justify-center">
+          <motion.div
+            className="relative text-[56px] font-bold font-[fraunces] mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Tools I use
+            <Image
+              src="/icons/pencil.svg"
+              alt="Flower"
+              width={48}
+              height={48}
+              className="w-12 h-12 absolute -left-[26px] top-0"
+            />
+          </motion.div>
+          <motion.p
+            className="text-2xl text-indigo-950 mb-12"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            The software, tools and technologies I am really good at:
+          </motion.p>
+        </div>
+
         {/* <div className="relative overflow-hidden">
           <motion.div
             className="flex gap-6"

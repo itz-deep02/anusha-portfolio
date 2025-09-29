@@ -26,7 +26,7 @@ function Contact() {
             showCursor={true}
             cursorCharacter="|"
             loop={false}
-            className="text-neutral-900 text-6xl font-semibold  underline underline-offset-16 decoration-[#FEBC18]"
+            className="text-neutral-900 text-[56px] font-semibold  underline underline-offset-16 decoration-[#FEBC18]"
             textColors={["text-neutral-900"]}
           />
           <div className="text-neutral-900 text-2xl w-2/3">
