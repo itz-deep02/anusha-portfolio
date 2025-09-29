@@ -144,7 +144,7 @@ export function ReelTile({ item }: { item: Reel }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [hovered, setHovered] = useState(false);
   const [inView, setInView] = useState(false);
-  const [audioUnlocked, setAudioUnlocked] = useState(true); // after a click/tap
+  const [audioUnlocked, setAudioUnlocked] = useState(false); // after a click/tap
 
   // Observe visibility to avoid preloading off-screen
   useEffect(() => {
