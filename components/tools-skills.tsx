@@ -30,7 +30,7 @@ export function ToolsSkills() {
       <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
       <div className="mx-auto text-center">
         <motion.div
-          className="relative text-6xl font-bold font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] mb-4"
+          className="relative text-6xl font-bold font-[fraunces] mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

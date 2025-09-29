@@ -5,6 +5,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         geist: ["var(--font-geist)", "sans-serif"],
+        fraunces: ['var(--font-[fraunces])', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       },
     },
   },

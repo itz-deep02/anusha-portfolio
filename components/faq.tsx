@@ -33,7 +33,7 @@ export function FAQ() {
       id="FAQ"
     >
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-6xl font-bold font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] text-center text-slate-900 mb-16">
+        <div className="text-6xl font-bold font-[fraunces] text-center text-slate-900 mb-16">
           Frequently Asked Questions
         </div>
 

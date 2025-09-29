@@ -50,7 +50,7 @@ export function InstagramPortfolio() {
         <div className="space-y-8 flex flex-col w-full">
           <div className="space-y-6">
             <div className=" flex items-center gap-3 justify-center">
-              <div className="relative text-6xl font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold'] font-bold">
+              <div className="relative text-6xl font-[fraunces] font-bold">
                 Beyond the Portfolio
                 <Image
                   src="/icons/star.svg"

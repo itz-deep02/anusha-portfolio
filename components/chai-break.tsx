@@ -11,7 +11,7 @@ export function StorySection() {
           {/* Photo Section */}
           <div className="relative">
             {/* Photo card */}
-            <div className="bg-white rounded-3xl p-6 shadow-sm">
+            <div className="bg-white rounded-3xl p-6">
               <div className="w-80 h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/images/anusha-photo.png"
@@ -35,7 +35,7 @@ export function StorySection() {
                 height={32}
                 className="w-8 h-8 absolute -left-3 -top-3"
               />
-              <div className="text-6xl font-bold text-indigo-950 font-['FONTSPRING_DEMO_-_Recoleta_Alt_Bold']">
+              <div className="text-5xl font-bold text-indigo-950 font-[fraunces]">
                 Chai break for my <span className="text-violet-400">Story</span>
               </div>
               <Image

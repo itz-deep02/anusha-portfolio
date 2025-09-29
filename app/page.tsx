@@ -31,11 +31,16 @@ export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
   const handleWelcomeComplete = () => setShowWelcome(false);
 
-  if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
+  // if (showWelcome) return <WelcomeScreen onComplete={handleWelcomeComplete} />;
 
   return (
     <>
       {/* TOP SCROLL PROGRESS BAR */}
+      {showWelcome && (
+        <div className="fixed inset-0 z-[10000] bg-white">
+          <WelcomeScreen onComplete={handleWelcomeComplete} />
+        </div>
+      )}
       <motion.div
         className="fixed left-0 right-0 top-0 h-1 bg-gradient-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92] origin-left z-[9999]"
         style={{ scaleX }}
