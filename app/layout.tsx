@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+// app/layout.tsx
 import "./globals.css";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -15,8 +15,7 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://anusha-agrawal-portfolio.vercel.app"),
+export const metadata = {
   title: "Anusha Agrawal — Portfolio",
   description:
     "Designer & developer. Projects, writing, and a few cozy videos.",
@@ -27,37 +26,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const ABS = "https://anusha-agrawal-portfolio.vercel.app";
-  const OG = `${ABS}/images/anusha-photo.png`; // your file in /public/images/og.png
+  const SITE = "https://anusha-agrawal-portfolio.vercel.app";
+  const IMAGE = `${SITE}/images/anusha-photo.png`;
 
   return (
     <html lang="en">
       <head>
-        {/* Canonical */}
-        <link rel="canonical" href={ABS + "/"} />
+        <meta name="title" content="Anusha Agrawal — Portfolio" />
+        <meta
+          name="description"
+          content="Designer & developer. Projects, writing, and a few cozy videos."
+        />
 
-        {/* ---- Open Graph (LinkedIn reads these) ---- */}
+        {/* --- Open Graph --- */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={ABS + "/"} />
+        <meta property="og:url" content={SITE} />
         <meta property="og:site_name" content="Anusha Agrawal" />
         <meta property="og:title" content="Anusha Agrawal — Portfolio" />
         <meta
           property="og:description"
           content="Designer & developer. Projects, writing, and a few cozy videos."
         />
-        <meta property="og:image" content={OG} />
+        <meta property="og:image" content={IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Anusha Agrawal — Portfolio" />
 
-        {/* Twitter (harmless elsewhere) */}
+        {/* --- Twitter --- */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Anusha Agrawal — Portfolio" />
         <meta
           name="twitter:description"
           content="Designer & developer. Projects, writing, and a few cozy videos."
         />
-        <meta name="twitter:image" content={OG} />
+        <meta name="twitter:image" content={IMAGE} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased`}
