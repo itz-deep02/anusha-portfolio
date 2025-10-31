@@ -1,69 +1,64 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
-import { Fraunces } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
-  // pick one: 'swap' | 'optional' | 'fallback' | 'auto' | 'block'
   display: "swap",
-  weight: ["400", "700"], // trim to what you use
+  weight: ["400", "700"],
   style: ["normal", "italic"],
 });
 
-// app/layout.tsx
 export const metadata: Metadata = {
   metadataBase: new URL("https://anusha-agrawal-portfolio.vercel.app"),
   title: "Anusha Agrawal — Portfolio",
   description:
     "Designer & developer. Projects, writing, and a few cozy videos.",
-  alternates: { canonical: "/" },
-  robots: { index: true, follow: true },
-
-  openGraph: {
-    type: "website",
-    url: "https://anusha-agrawal-portfolio.vercel.app/",
-    siteName: "Anusha Agrawal",
-    title: "Anusha Agrawal — Portfolio",
-    description:
-      "Designer & developer. Projects, writing, and a few cozy videos.",
-    images: [
-      {
-        url: "https://anusha-agrawal-portfolio.vercel.app/images/anusha-photo.png",
-        width: 1200,
-        height: 630,
-        alt: "Anusha Agrawal — Portfolio",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Anusha Agrawal — Portfolio",
-    description:
-      "Designer & developer. Projects, writing, and a few cozy videos.",
-    images: [
-      "https://anusha-agrawal-portfolio.vercel.app/images/anusha-photo.png",
-    ],
-  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
+  const ABS = "https://anusha-agrawal-portfolio.vercel.app";
+  const OG = `${ABS}/images/anusha-photo.png`; // your file in /public/images/og.png
+
   return (
     <html lang="en">
+      <head>
+        {/* Canonical */}
+        <link rel="canonical" href={ABS + "/"} />
+
+        {/* ---- Open Graph (LinkedIn reads these) ---- */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={ABS + "/"} />
+        <meta property="og:site_name" content="Anusha Agrawal" />
+        <meta property="og:title" content="Anusha Agrawal — Portfolio" />
+        <meta
+          property="og:description"
+          content="Designer & developer. Projects, writing, and a few cozy videos."
+        />
+        <meta property="og:image" content={OG} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Anusha Agrawal — Portfolio" />
+
+        {/* Twitter (harmless elsewhere) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Anusha Agrawal — Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Designer & developer. Projects, writing, and a few cozy videos."
+        />
+        <meta name="twitter:image" content={OG} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased`}
       >
