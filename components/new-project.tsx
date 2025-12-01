@@ -35,7 +35,11 @@ const projects = [
       { value: "9%", label: "ARPU Uplift" },
       { value: "20%", label: "Less Fraud Complaints" },
     ],
-    cta: { label: "Coming Soon", href: "#", variant: "medium" },
+    cta: {
+      label: "View case study",
+      href: "https://www.figma.com/proto/yEIxAciUkjgo6HOnGGrUkg/A-Portfolio?page-id=1438%3A6091&node-id=1438-6092&viewport=573%2C460%2C0.03&t=ycKHI6WJjXRxQVBa-1&scaling=scale-down-width&content-scaling=fixed",
+      variant: "medium",
+    },
     tags: ["Player First Design", "B2C App", "App Case Study"],
     theme: "beige",
     layout: "image-left",
