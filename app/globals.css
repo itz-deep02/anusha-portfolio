@@ -67,3 +67,14 @@ html, body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Mobile gate: the site is desktop-only, so on small screens clip the
+   underlying desktop layout (it would otherwise force the browser to
+   zoom out) and lock scrolling behind the full-screen gate. */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+}

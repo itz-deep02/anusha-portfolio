@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { MobileGate } from "components/mobile-gate";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased`}
       >
+        <MobileGate />
         {children}
       </body>
     </html>
